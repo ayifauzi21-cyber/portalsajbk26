@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal SAJBK 2026 - SMPN 1 Manonjaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Header dengan Background Foto */
+      .hero-custom {
+        position: relative;
+        background-image: url("foto-bareng.jpg"); /* Pastikan nama file di GitHub sama */
+        background-size: cover;
+        background-position: center 30%;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Overlay agar teks terbaca jelas */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(30, 58, 138, 0.7), rgba(15, 23, 42, 0.85));
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .btn-exam {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .btn-exam:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .locked {
+        filter: grayscale(0.8);
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Header / Hero Section dengan Foto -->
+    <header class="hero-custom text-white py-16 px-4 shadow-2xl">
+      <div class="hero-overlay"></div>
+      <div class="max-w-5xl mx-auto text-center hero-content">
+        <div class="flex justify-center mb-6">
+          <div class="bg-white/20 backdrop-blur-md p-4 rounded-full border border-white/30 shadow-xl">
+            <i class="fas fa-university text-white text-5xl"></i>
+          </div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight drop-shadow-lg">PORTAL SAJBK 2026</h1>
+        <p class="text-xl md:text-2xl text-blue-100 font-medium drop-shadow-md">SMP Negeri 1 Manonjaya</p>
+        <p class="text-sm md:text-md text-blue-200 mt-1 uppercase tracking-widest">Kabupaten Tasikmalaya</p>
+
+        <div id="current-time-display" class="mt-8 inline-block bg-white/10 backdrop-blur-lg px-8 py-3 rounded-2xl border border-white/20 text-md font-mono font-bold shadow-inner">Memuat Waktu...</div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <!-- Status Panel -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 -mt-20 relative z-10">
+        <div class="glass-card p-6 rounded-3xl shadow-xl border-t-4 border-blue-600">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Status Server</h3>
+          <div class="flex items-center">
+            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse mr-2"></div>
+            <span class="font-bold text-lg text-slate-700">Sistem Online</span>
+          </div>
+        </div>
+        <div class="glass-card p-6 rounded-3xl shadow-xl border-t-4 border-amber-500">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Sesi Aktif</h3>
+          <div id="active-session-text" class="font-bold text-lg text-slate-700 italic">Mengecek Jadwal...</div>
+        </div>
+        <div class="glass-card p-6 rounded-3xl shadow-xl border-t-4 border-indigo-600">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Tahun Pelajaran</h3>
+          <div class="font-bold text-lg text-slate-700">2025 / 2026</div>
+        </div>
+      </div>
+
+      <!-- Judul Bagian -->
+      <div class="flex items-center justify-between mb-8 px-2">
+        <h2 class="text-2xl font-bold text-slate-800 flex items-center">
+          <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+          Daftar Mata Pelajaran
+        </h2>
+      </div>
+
+      <!-- Exam Grid -->
+      <div id="exam-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- JS Generated Content -->
+      </div>
+
+      <!-- Manual Override -->
+      <div class="mt-20 text-center">
+        <button onclick="toggleAdminMode()" class="bg-slate-200/50 hover:bg-slate-200 text-slate-500 text-[10px] px-4 py-2 rounded-full transition-all"><i class="fas fa-user-shield mr-1"></i> AKSES PROKTOR / ADMIN</button>
+      </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="font-bold text-white mb-2 italic">"Pendidikan adalah senjata paling ampuh yang bisa digunakan untuk mengubah dunia."</p>
+        <p class="text-sm">&copy; 2026 SMP Negeri 1 Manonjaya. Dirancang untuk SAJBK 2026.</p>
+        <div class="mt-6 flex justify-center space-x-4">
+          <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center"><i class="fab fa-facebook-f text-xs"></i></div>
+          <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center"><i class="fab fa-instagram text-xs"></i></div>
+          <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center"><i class="fas fa-globe text-xs"></i></div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // DATA JADWAL & LINK GFORM (Updated)
+      const examData = [
+        { id: "paibp", name: "PAI-BP", date: "2026-05-11", start: "08:00", end: "09:00", link: "https://docs.google.com/forms/d/e/1FAIpQLScRux40VHFy5F0FQDy1fVDVXFPKmFRdW_kyrseaEgfa6ooxww/viewform?usp=publish-editor" },
+        { id: "ppkn", name: "PPKn", date: "2026-05-11", start: "09:15", end: "10:15", link: "https://docs.google.com/forms/d/e/1FAIpQLScOWGmAppF0Xy7L6ab5yUA_J381SYyIu_YXbLGSTlKT4tDd2g/viewform?usp=publish-editor" },
+        { id: "bing", name: "Bahasa Inggris", date: "2026-05-11", start: "10:45", end: "11:45", link: "https://docs.google.com/forms/d/e/1FAIpQLSfRCitzlYWceUFaLafMiF2BdBWT9ua8riGQ-6BCR2NcsOUzdw/viewform?usp=publish-editor" },
+
+        { id: "ipa", name: "IPA", date: "2026-05-12", start: "08:00", end: "09:00", link: "https://docs.google.com/forms/d/e/1FAIpQLScCM9RFQyL8LlJwa5P340QkhobMnHNjs0Ql49qH9-Hphk7I9g/viewform?usp=publish-editor" },
+        { id: "indo", name: "Bahasa Indonesia", date: "2026-05-12", start: "09:15", end: "10:15", link: "https://docs.google.com/forms/d/e/1FAIpQLSchq1HEU4uwtyZuiRdmQiTji1D-WS0OuGIt4WyMueTjm1tNFw/viewform?usp=publish-editor" },
+        { id: "tikt", name: "Informatika", date: "2026-05-12", start: "10:45", end: "11:45", link: "https://docs.google.com/forms/d/e/1FAIpQLSfWJgaTnkcfnKJd-x5r7lSLBJ6Ah8aozlIsFv1QC1uPX5blFw/viewform?usp=dialog" },
+
+        { id: "mtk", name: "Matematika", date: "2026-05-13", start: "08:00", end: "09:00", link: "https://docs.google.com/forms/d/e/1FAIpQLSclvqKhRxfztL7Q8KrXMZuvXDOAcmjAJnFLEpNxu-cDJwNqfg/viewform?usp=publish-editor" },
+        { id: "ips", name: "IPS", date: "2026-05-13", start: "09:15", end: "10:15", link: "https://docs.google.com/forms/d/e/1FAIpQLSfFJ5IRbk1w-5DltSF7VUBtvapbX6Tjl_rvBnCLRF8y_wGjTQ/viewform?usp=publish-editor" },
+        { id: "sunda", name: "Bahasa Sunda", date: "2026-05-13", start: "10:45", end: "11:45", link: "https://docs.google.com/forms/d/e/1FAIpQLSfkSKU6p1TU2FnSGDZ1gvDvgfkcqbDNHKbDuCriTjO8LcuX4g/viewform?usp=dialog" },
+      ];
+
+      let adminMode = false;
+
+      function updateClock() {
+        const now = new Date();
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+        document.getElementById("current-time-display").innerText = now.toLocaleDateString("id-ID", options);
+        checkExamStatus();
+      }
+
+      function checkExamStatus() {
+        const now = new Date();
+        const grid = document.getElementById("exam-grid");
+        let activeSessionFound = "Tidak ada sesi aktif";
+
+        grid.innerHTML = "";
+
+        examData.forEach((exam) => {
+          const examStart = new Date(`${exam.date}T${exam.start}:00`);
+          const examEnd = new Date(`${exam.date}T${exam.end}:00`);
+
+          const isOngoing = now >= examStart && now <= examEnd;
+          const isUpcoming = now < examStart;
+          const isFinished = now > examEnd;
+
+          let statusText = "";
+          let statusClass = "";
+          let btnDisabled = true;
+
+          if (isOngoing || adminMode) {
+            statusText = "Sesi Berlangsung";
+            statusClass = "text-green-600 bg-green-100";
+            btnDisabled = false;
+            activeSessionFound = exam.name;
+          } else if (isUpcoming) {
+            statusText = `Pukul ${exam.start}`;
+            statusClass = "text-blue-600 bg-blue-100";
+          } else {
+            statusText = "Selesai";
+            statusClass = "text-slate-400 bg-slate-100";
+          }
+
+          const card = document.createElement("div");
+          card.className = `glass-card p-6 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between transition-all duration-300 ${!isOngoing && !adminMode ? "locked opacity-60" : "scale-100 hover:shadow-2xl"}`;
+
+          card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest ${statusClass}">
+                                ${statusText}
+                            </span>
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center ${isOngoing ? "bg-amber-100 text-amber-600 animate-pulse" : "bg-slate-100 text-slate-400"}">
+                                <i class="fas ${isFinished ? "fa-check" : isOngoing ? "fa-edit" : "fa-lock"} text-sm"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-800 mb-1">${exam.name}</h2>
+                        <div class="text-xs text-slate-500 mb-6 space-y-1">
+                            <p><i class="far fa-calendar-alt mr-2"></i>${new Date(exam.date).toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "short" })}</p>
+                            <p><i class="far fa-clock mr-2"></i>Sesi: ${exam.start} - ${exam.end}</p>
+                        </div>
+                    </div>
+                    <a href="${exam.link}" target="_blank" 
+                       class="btn-exam block text-center py-3 px-6 rounded-2xl font-bold transition-all
+                       ${btnDisabled ? "bg-slate-200 text-slate-400 pointer-events-none" : "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200"}"
+                       ${btnDisabled ? 'tabindex="-1"' : ""}>
+                       ${isFinished ? "Sesi Selesai" : isOngoing ? "Mulai Ujian" : "Belum Dibuka"}
+                    </a>
+                `;
+          grid.appendChild(card);
+        });
+
+        document.getElementById("active-session-text").innerText = activeSessionFound;
+      }
+
+      function toggleAdminMode() {
+        const pin = prompt("Konfirmasi Akses Proktor (PIN):");
+        if (pin === "2026") {
+          adminMode = !adminMode;
+          alert(adminMode ? "Mode Admin Aktif!" : "Mode Admin Nonaktif!");
+          checkExamStatus();
+        } else if (pin !== null) {
+          alert("PIN Salah!");
+        }
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
