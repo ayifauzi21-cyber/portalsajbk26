@@ -136,17 +136,17 @@
     <script>
       // DATA JADWAL & LINK GFORM (Updated)
       const examData = [
-        { id: "paibp", name: "PAI-BP", date: "2026-05-09", start: "22:20", end: "22:40", link: "https://docs.google.com/forms/d/e/1FAIpQLScRux40VHFy5F0FQDy1fVDVXFPKmFRdW_kyrseaEgfa6ooxww/viewform?usp=publish-editor" },
-        { id: "ppkn", name: "PPKn", date: "2026-05-11", start: "09:15", end: "10:15", link: "https://docs.google.com/forms/d/e/1FAIpQLScOWGmAppF0Xy7L6ab5yUA_J381SYyIu_YXbLGSTlKT4tDd2g/viewform?usp=publish-editor" },
-        { id: "bing", name: "Bahasa Inggris", date: "2026-05-11", start: "10:45", end: "11:45", link: "https://docs.google.com/forms/d/e/1FAIpQLSfRCitzlYWceUFaLafMiF2BdBWT9ua8riGQ-6BCR2NcsOUzdw/viewform?usp=publish-editor" },
+        { id: "paibp", name: "PAI-BP", date: "2026-05-11", start: "07:50", end: "09:05", link: "https://docs.google.com/forms/d/e/1FAIpQLScRux40VHFy5F0FQDy1fVDVXFPKmFRdW_kyrseaEgfa6ooxww/viewform?usp=publish-editor" },
+        { id: "ppkn", name: "PPKn", date: "2026-05-11", start: "09:10", end: "10:20", link: "https://docs.google.com/forms/d/e/1FAIpQLScOWGmAppF0Xy7L6ab5yUA_J381SYyIu_YXbLGSTlKT4tDd2g/viewform?usp=publish-editor" },
+        { id: "bing", name: "Bahasa Inggris", date: "2026-05-11", start: "10:40", end: "11:50", link: "https://docs.google.com/forms/d/e/1FAIpQLSfRCitzlYWceUFaLafMiF2BdBWT9ua8riGQ-6BCR2NcsOUzdw/viewform?usp=publish-editor" },
 
-        { id: "ipa", name: "IPA", date: "2026-05-12", start: "08:00", end: "09:00", link: "https://docs.google.com/forms/d/e/1FAIpQLScCM9RFQyL8LlJwa5P340QkhobMnHNjs0Ql49qH9-Hphk7I9g/viewform?usp=publish-editor" },
-        { id: "indo", name: "Bahasa Indonesia", date: "2026-05-12", start: "09:15", end: "10:15", link: "https://docs.google.com/forms/d/e/1FAIpQLSchq1HEU4uwtyZuiRdmQiTji1D-WS0OuGIt4WyMueTjm1tNFw/viewform?usp=publish-editor" },
-        { id: "tikt", name: "Informatika", date: "2026-05-12", start: "10:45", end: "11:45", link: "https://docs.google.com/forms/d/e/1FAIpQLSfWJgaTnkcfnKJd-x5r7lSLBJ6Ah8aozlIsFv1QC1uPX5blFw/viewform?usp=dialog" },
+        { id: "ipa", name: "IPA", date: "2026-05-12", start: "07:50", end: "09:05", link: "https://docs.google.com/forms/d/e/1FAIpQLScCM9RFQyL8LlJwa5P340QkhobMnHNjs0Ql49qH9-Hphk7I9g/viewform?usp=publish-editor" },
+        { id: "indo", name: "Bahasa Indonesia", date: "2026-05-12", start: "09:10", end: "10:20", link: "https://docs.google.com/forms/d/e/1FAIpQLSchq1HEU4uwtyZuiRdmQiTji1D-WS0OuGIt4WyMueTjm1tNFw/viewform?usp=publish-editor" },
+        { id: "tikt", name: "Informatika", date: "2026-05-12", start: "10:40", end: "11:50", link: "https://docs.google.com/forms/d/e/1FAIpQLSfWJgaTnkcfnKJd-x5r7lSLBJ6Ah8aozlIsFv1QC1uPX5blFw/viewform?usp=dialog" },
 
-        { id: "mtk", name: "Matematika", date: "2026-05-13", start: "08:00", end: "09:00", link: "https://docs.google.com/forms/d/e/1FAIpQLSclvqKhRxfztL7Q8KrXMZuvXDOAcmjAJnFLEpNxu-cDJwNqfg/viewform?usp=publish-editor" },
-        { id: "ips", name: "IPS", date: "2026-05-13", start: "09:15", end: "10:15", link: "https://docs.google.com/forms/d/e/1FAIpQLSfFJ5IRbk1w-5DltSF7VUBtvapbX6Tjl_rvBnCLRF8y_wGjTQ/viewform?usp=publish-editor" },
-        { id: "sunda", name: "Bahasa Sunda", date: "2026-05-13", start: "10:45", end: "11:45", link: "https://docs.google.com/forms/d/e/1FAIpQLSfkSKU6p1TU2FnSGDZ1gvDvgfkcqbDNHKbDuCriTjO8LcuX4g/viewform?usp=dialog" },
+        { id: "mtk", name: "Matematika", date: "2026-05-13", start: "07:50", end: "09:05", link: "https://docs.google.com/forms/d/e/1FAIpQLSclvqKhRxfztL7Q8KrXMZuvXDOAcmjAJnFLEpNxu-cDJwNqfg/viewform?usp=publish-editor" },
+        { id: "ips", name: "IPS", date: "2026-05-13", start: "09:10", end: "10:20", link: "https://docs.google.com/forms/d/e/1FAIpQLSfFJ5IRbk1w-5DltSF7VUBtvapbX6Tjl_rvBnCLRF8y_wGjTQ/viewform?usp=publish-editor" },
+        { id: "sunda", name: "Bahasa Sunda", date: "2026-05-13", start: "10:40", end: "11:50", link: "https://docs.google.com/forms/d/e/1FAIpQLSfkSKU6p1TU2FnSGDZ1gvDvgfkcqbDNHKbDuCriTjO8LcuX4g/viewform?usp=dialog" },
       ];
 
       let adminMode = false;
